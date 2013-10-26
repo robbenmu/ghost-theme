@@ -1,0 +1,37 @@
+<article class="post hentry">
+    <h2 class="entry-title"><a href="/{{slug}}" rel="bookmark">{{title}}</a></h2>
+
+    <p class="byline vcard">
+        By
+            <span class="author">
+                {{author.name}}
+            </span>
+
+        on
+        <time class="updated"
+              datetime="{{date published_at format='MMMM, DD YYYY'}}"
+              pubdate="">
+            {{date published_at format='MMMM, DD YYYY'}}
+        </time>
+
+    </p>
+
+    <footer class="article-footer">
+        {{#if tags}}
+            <section class="tags">
+                <span class="tags-title">
+                    Tags:
+                    {{#each tags}}
+                        <!-- Tag Links are not quite ready yet.
+                               <a href="/tags/{{this.name}}"
+                               class="tag-label"
+                               title="View all posts in {{this.name}}"
+                               rel="category">{{this.name}}</a>
+                               -->
+                            <span class="tag-label">{{this.name}}</span>
+                    {{/each}}
+                </span>
+            </section>
+        {{/if}}
+    </footer>
+</article>

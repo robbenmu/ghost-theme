@@ -1,0 +1,75 @@
+<footer class="container footer" role="contentinfo">
+
+    <div id="inner-footer" class="clearfix">
+
+        <section class="recent wrap sevencol first clearfix">
+            {{#if posts}}
+
+                {{! List the most recent posts, but skip the first. Pagination applies here }}
+                {{#foreach posts}}
+                    {{#unless @first}}
+                        {{> list-post}}
+                    {{/unless}}
+                {{/foreach}}
+
+                {{!! After all the posts, we have the previous/next pagination links }}
+                {{#if pagination}}
+                    {{pagination}}
+                {{/if}}
+
+            {{else}}
+
+                {{! If displaying a single post, show the comments partial (partials/comments.hbs) }}
+                {{> comments}}
+
+            {{/if}}
+        </section>
+
+        <section class="sidebar fivecol clearfix">
+
+            <!-- Re-display the blog title and description (tagline) -->
+            <header class="sidebar-header">
+                <h3>{{@blog.title}}</h3>
+                <h4>{{@blog.description}}</h4>
+            </header>
+
+            <!-- Searching not yet available in Ghost
+            <section class="search">
+                <form name="search-site" id="search-site" class="search-form">
+                    <input type="text" name="search" id="search-input" class="text-input" data-label-text="Search Website" value="Search Website" />
+                    <input type="submit" name="search-submit" id="search-submit" class="search-button" value="Search" />
+                </form>
+            </section>-->
+
+            <nav class="sidebar-menu vertical">
+                {{! The nav theme helper will be available in a future release of Ghost }}
+                {{!nav}}
+
+                {{! Here is where you edit the static links displayed on every page.
+                    Eventually, these links will be editable in the Ghost Admin Interface
+                    and be inserted with the 'nav' theme helper (see above) }}
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">About Me</a></li>
+                    <li><a href="">Connect</a></li>
+                </ul>
+            </nav>
+
+            <section class="social wrap">
+                <div>
+                    {{! Be sure to fill in links to your social media sites here }}
+                    <a href='#' class='symbol' title='&#xe086;'></a> {{! Twitter }}
+                    <a href='#' class='symbol' title='&#xe027;'></a> {{! Facebook }}
+                    <a href='#' class='symbol' title='&#xe039;'></a> {{! Google Plus }}
+                    {{! For additional Social Media links, simply copy one of the lines
+                        above and replace the unicode (e.g. &#xe086;)  in the 'title' with another
+                        unicode option from http://drinchev.github.io/monosocialiconsfont/  }}
+                </div>
+            </section>
+        </section>
+
+    </div> <!-- end #inner-footer -->
+
+    <div class="source-org copyright">© 2013 Theme Spectre, LLC.</div>
+</footer> <!-- end footer -->

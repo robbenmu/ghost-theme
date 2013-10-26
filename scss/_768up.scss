@@ -1,0 +1,157 @@
+/******************************************************************
+Site Name: The Classy Theme
+Author: Theme Spectre, LLC
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {}
+
+%ptsans {
+    font-family: 'PT Sans';
+    font-weight: 700;
+    color: #333;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+#container {
+  max-width: 729px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.wrap {
+	margin: 0 auto;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header {
+  margin-bottom: 45px;
+  padding: 60px 0 5px 0;
+}
+
+#logo {}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+#site-navigation {
+    font-family: 'PT Sans';
+    font-weight: 700;
+    font-size: 1.3em;
+    text-align: center;
+
+    margin-top: 60px;
+
+    ul {
+        margin: 20px 0 0 0;
+
+        &:after {
+            content: " ";
+            display: table;
+            clear:both;
+        }
+    }
+
+	li {
+        border: none;
+        display: inline-block;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.3em;
+
+		a {
+			border-bottom: 0;
+            padding: 10px 30px;
+            color:#333;
+            @include transition(color .25s);
+
+			&:hover, &:focus {
+                color: #00e4ff;
+			}
+		}
+
+		/* showing sub-menus */
+		&:hover ul {
+			top: auto;
+			display: block;
+		}
+
+	} /* end .menu ul li */
+
+} /* end .nav */
+
+/*********************
+SIDEBARS / FOOTER
+*********************/
+
+/******** RECENT POSTS *********/
+.recent {
+  float: left;
+  margin-left: 0;
+}
+
+/******** SIDEBAR *********/
+
+.sidebar {
+  float: right;
+  margin-left: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 1.8em;
+  color: #333333;
+
+  .sidebar-header {
+    border-bottom: 1px solid #dbdbdb;
+    color: #333333;
+    display: block;
+
+    h3 {
+      margin: 0 0 0.2em 0;
+      text-transform: none;
+    }
+
+    h4 {
+      margin: 0.4em 0;
+      text-transform: none;
+      font-family: 'Museo Slab', serif;
+      font-weight: normal;
+      font-size: 1.0em;
+      color: #888;
+    }
+  }
+
+  nav {
+    text-align: left;
+    a {
+      color: #333333;
+      text-transform: uppercase;
+      &:hover, &:focus {
+        color: #00e4ff;
+      }
+    }
+  }
+
+  .social {
+    color: #fbfbfb;
+    text-align: left;
+
+    a.symbol {
+      color: #333333;
+    }
+  }
+
+}

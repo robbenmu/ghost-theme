@@ -1,0 +1,391 @@
+/******************************************************************
+Site Name: The Classy
+Author: Theme Spectre
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't 
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+*/
+/* import mixins */
+/******************************************************************
+Site Name: The Classy Theme
+Author: Theme Spectre, LLC
+
+Stylesheet: Mixins & Constants Stylesheet
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+/*********************
+TOOLS
+*********************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid; }
+
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f; }
+
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8; }
+
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4; }
+
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2; }
+
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*********************
+BOX SHADOW
+*********************/
+/*********************
+BUTTONS
+*********************/
+.button, .button:visited {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 1px solid #be0d37;
+  border-top-color: #db0f3f;
+  border-left-color: #db0f3f;
+  padding: 4px 12px;
+  color: white;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: 21px;
+  border-radius: 4px;
+  background-color: #e40f42;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f01d4f), to(#e40f42));
+  background-image: -webkit-linear-gradient(top, #f01d4f, #e40f42);
+  background-image: -moz-linear-gradient(top, #f01d4f, #e40f42);
+  background-image: -o-linear-gradient(top, #f01d4f, #e40f42);
+  background-image: linear-gradient(to bottom, #f01d4f, #e40f42); }
+  .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
+    color: white;
+    border: 1px solid #be0d37;
+    border-top-color: #9d0a2d;
+    border-left-color: #9d0a2d;
+    background-color: #cc0e3b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#cc0e3b));
+    background-image: -webkit-linear-gradient(top, #e40f42, #cc0e3b);
+    background-image: -moz-linear-gradient(top, #e40f42, #cc0e3b);
+    background-image: -o-linear-gradient(top, #e40f42, #cc0e3b);
+    background-image: linear-gradient(to bottom, #e40f42, #cc0e3b); }
+  .button:active, .button:visited:active {
+    background-color: #f01d4f;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#f01d4f));
+    background-image: -webkit-linear-gradient(top, #e40f42, #f01d4f);
+    background-image: -moz-linear-gradient(top, #e40f42, #f01d4f);
+    background-image: -o-linear-gradient(top, #e40f42, #f01d4f);
+    background-image: linear-gradient(to bottom, #e40f42, #f01d4f); }
+
+.blue-button, .blue-button:visited {
+  border-color: #1472ad;
+  text-shadow: 0 1px 1px #1472ad;
+  background-color: #1681c4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1990db), to(#1681c4));
+  background-image: -webkit-linear-gradient(top, #1990db, #1681c4);
+  background-image: -moz-linear-gradient(top, #1990db, #1681c4);
+  background-image: -o-linear-gradient(top, #1990db, #1681c4);
+  background-image: linear-gradient(to bottom, #1990db, #1681c4);
+  box-shadow: inset 0 0 3px #59b3ec; }
+  .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
+    border-color: #116396;
+    background-color: #1472ad;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1784c9), to(#1472ad));
+    background-image: -webkit-linear-gradient(top, #1784c9, #1472ad);
+    background-image: -moz-linear-gradient(top, #1784c9, #1472ad);
+    background-image: -o-linear-gradient(top, #1784c9, #1472ad);
+    background-image: linear-gradient(to bottom, #1784c9, #1472ad); }
+  .blue-button:active, .blue-button:visited:active {
+    background-color: #1990db;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db));
+    background-image: -webkit-linear-gradient(top, #1681c4, #1990db);
+    background-image: -moz-linear-gradient(top, #1681c4, #1990db);
+    background-image: -o-linear-gradient(top, #1681c4, #1990db);
+    background-image: linear-gradient(to bottom, #1681c4, #1990db); }
+
+/*********************
+BORDERS
+*********************/
+/******************************************************************
+Site Name: The Classy Theme
+Author: Theme Spectre, LLC
+
+Stylesheet: Grid Stylesheet
+
+******************************************************************/
+.onecol {
+  width: 5.801104972%; }
+
+/* 4.85%;  } /* grid_1  */
+.twocol {
+  width: 14.364640883%; }
+
+/* 13.45%; } /* grid_2  */
+.threecol {
+  width: 22.928176794%; }
+
+/* 22.05%; } /* grid_3  */
+.fourcol {
+  width: 31.491712705%; }
+
+/* 30.75%; } /* grid_4  */
+.fivecol {
+  width: 40.055248616%; }
+
+/* 39.45%; } /* grid_5  */
+.sixcol {
+  width: 48.618784527%; }
+
+/* 48%;    } /* grid_6  */
+.sevencol {
+  width: 57.182320438000005%; }
+
+/* 56.75%; } /* grid_7  */
+.eightcol {
+  width: 65.74585634900001%; }
+
+/* 65.4%;  } /* grid_8  */
+.ninecol {
+  width: 74.30939226%; }
+
+/* 74.05%; } /* grid_9  */
+.tencol {
+  width: 82.87292817100001%; }
+
+/* 82.7%;  } /* grid_10 */
+.elevencol {
+  width: 91.436464082%; }
+
+/* 91.35%; } /* grid_11 */
+.twelvecol {
+  width: 99.999999993%; }
+
+/* 100%;   } /* grid_12 */
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+  position: relative;
+  float: left;
+  margin-left: 2.762430939%; }
+
+.first {
+  margin-left: 0; }
+
+.last {
+  float: right; }
+
+/******************************************************************
+Site Name: The Classy Theme
+Author: Theme Spectre, LLC
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+#container {
+  max-width: 729px;
+  height: 100%;
+  margin: 0 auto; }
+
+.wrap {
+  margin: 0 auto; }
+
+/*********************
+HEADER STYLES
+*********************/
+.header {
+  margin-bottom: 45px;
+  padding: 60px 0 5px 0; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+#site-navigation {
+  font-family: 'PT Sans';
+  font-weight: 700;
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 60px;
+  /* end .menu ul li */ }
+  #site-navigation ul {
+    margin: 20px 0 0 0; }
+    #site-navigation ul:after {
+      content: " ";
+      display: table;
+      clear: both; }
+  #site-navigation li {
+    border: none;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    /* showing sub-menus */ }
+    #site-navigation li a {
+      border-bottom: 0;
+      padding: 10px 30px;
+      color: #333;
+      -webkit-transition: color 0.25s;
+      -ms-transition: color 0.25s;
+      -o-transition: color 0.25s;
+      -transition: color 0.25s;
+      transition: color 0.25s; }
+      #site-navigation li a:hover, #site-navigation li a:focus {
+        color: #00e4ff; }
+    #site-navigation li:hover ul {
+      top: auto;
+      display: block; }
+
+/* end .nav */
+/*********************
+SIDEBARS / FOOTER
+*********************/
+/******** RECENT POSTS *********/
+.recent {
+  float: left;
+  margin-left: 0; }
+
+/******** SIDEBAR *********/
+.sidebar {
+  float: right;
+  margin-left: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 1.8em;
+  color: #333333; }
+  .sidebar .sidebar-header {
+    border-bottom: 1px solid #dbdbdb;
+    color: #333333;
+    display: block; }
+    .sidebar .sidebar-header h3 {
+      margin: 0 0 0.2em 0;
+      text-transform: none; }
+    .sidebar .sidebar-header h4 {
+      margin: 0.4em 0;
+      text-transform: none;
+      font-family: 'Museo Slab', serif;
+      font-weight: normal;
+      font-size: 1.0em;
+      color: #888; }
+  .sidebar nav {
+    text-align: left; }
+    .sidebar nav a {
+      color: #333333;
+      text-transform: uppercase; }
+      .sidebar nav a:hover, .sidebar nav a:focus {
+        color: #00e4ff; }
+  .sidebar .social {
+    color: #fbfbfb;
+    text-align: left; }
+    .sidebar .social a.symbol {
+      color: #333333; }

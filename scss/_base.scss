@@ -1,0 +1,582 @@
+/******************************************************************
+Site Name: The Classy Theme
+Author: Theme Spectre, LLC
+
+Stylesheet: Base Mobile Stylesheet
+
+******************************************************************/
+
+/******************************************************************
+AVAILABLE MIXINS
+
+Source: _mixins.scss
+
+@include border($stroke, $style, $color, $radius);
+@include css-gradient($from, $to);
+@include box-sizing($type);
+@include box-shadow($position, $x-offset, $y-offset, $blur, $color);
+@include inset-shadow($position, $x-offset, $y-offset, $blur, $color);
+
+******************************************************************/
+
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+    font-family: Times, Garamond, serif;
+    font-size: 62.5%;
+    font-weight: normal;
+    font-style: normal;
+    color: #333;
+    background: #fbfbfb;
+    -webkit-text-stroke: 1px transparent;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+  width: auto;
+  margin: 0 20px;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+	color: #333;
+    @include transition(color .25s);
+    text-decoration: none;
+    
+	/* on hover */
+	&:hover, &:focus {
+		color: #00e4ff;
+	}
+
+	/* on click */
+	&:active {
+        color: #00e4ff;
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	font-family: 'PT Sans', $sans-serif;
+	text-rendering: optimizelegibility;
+	font-weight: 700;
+    line-height: 1em;
+    
+    margin: 0;
+
+	/* removing text decoration from all headline links */
+	a {
+	  text-decoration: none;
+	}
+}
+
+h1, .h1 {
+    font-size: 4.5em
+}
+
+h2, .h2 {
+	font-size: 2.6em;
+}
+
+h3, .h3 {
+	font-size: 2.1em;
+}
+
+h4, .h4 {
+	font-size: 1.4em;
+}
+
+h5, .h5 {
+	font-size: 1.3em;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+#logo {}
+
+#site-title {
+    @extend %ptsans;
+}
+
+#site-description h2{
+    @extend %museo;
+    margin-top: 0.3em;
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+/* The {{nav}} helper outputs a site-navigation div */
+
+#site-navigation {
+    border-bottom: 1px solid #dbdbdb;
+    margin-top: 1.8em;
+
+    ul {
+        margin : 0;
+        padding: 0;
+        position: relative;
+        z-index: 500;
+    }
+
+	li {
+      border-top:rgba(0,0,0,0.1) 1px solid;
+      margin: 0;
+      line-height: 1.3em;
+		a {
+            display: block;
+            padding:10px 0;
+            color:#333;
+            text-decoration: none;
+            background:transparent;
+			/*
+			remember this is for mobile ONLY, so there's no need
+			to even declare hover styles here, you can do it in
+			the style.scss file where it's relevant. We want to
+			keep this file as small as possible!
+			*/
+			&:hover, &:focus {
+
+			}
+		}
+    }
+} /* end .nav */
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content {
+	margin: 0 0 40px 0;
+}
+
+    .hentry {
+
+        header {
+            text-align: center;
+
+            h1 {
+                  font-size: 3.3em;
+                  @extend %ptsans;
+                  padding-bottom: 0.2em;
+            }
+        }
+
+        footer {}
+
+    } /* end .hentry */
+
+
+    /* post meta */
+    .byline {
+        font-size: 1.5em;
+        @extend %museo;
+        margin: 0;
+
+        time {}
+    }
+
+    /* entry content */
+    .entry-content {
+        font-family: 'Museo Slab';
+        font-size: 1.6em;
+        font-weight: normal;
+        line-height: 1.4em;
+
+        margin-top: 2em;
+
+        // Link styles
+        a {
+            color: #888;
+            @include transition(color .25s);
+            text-decoration: none;
+
+            /* on hover */
+            &:hover, &:focus {
+                color: #00e4ff;
+            }
+
+            /* on click */
+            &:active {
+                color: #00e4ff;
+            }
+        }
+
+        h1 {
+          padding: 0.4em 0;
+        }
+
+        h2 {
+          padding: 0.35em 0;
+        }
+
+        h3 {
+          padding: 0.3em 0;
+        }
+
+      h4 {
+        padding: 0.25em 0;
+        font-weight: bold;
+      }
+
+      h5 {
+        padding: 0.25em 0;
+        color: #888888;
+      }
+
+      h6 {
+        padding: 0.2em 0;
+        margin: 0;
+      }
+
+        // Paragraph styles
+        p {
+          text-align: justify;
+          margin: 1em 0;
+          line-height: 1.6em;
+          &:first-child {
+            margin-top: 0;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        // List styles
+        ul, ol, table, dl {}
+
+        ul, ol {
+            list-style-position: inside;
+            li {}
+        }
+
+        ul {
+            padding: 0 1.2em;
+
+            li {
+                list-style-type: disc;
+                padding: 0.4em 0;
+              line-height: 1.6em;
+            }
+        }
+
+        ol {
+          padding: 0 1.2em;
+
+            li {
+                padding: 0.4em 0;
+                list-style-type: decimal;
+              line-height: 1.6em;
+            }
+        }
+
+        blockquote {
+            margin: 0;
+            padding: 30px;
+            color: #dbdbdb;
+
+            &:before {
+              background: url('../images/quote@2x.png') no-repeat;
+              background-size: 18px 13px;
+            }
+
+            p {
+              @extend %museo;
+              color: #888;
+              position: relative;
+              top: 0;
+            }
+        }
+
+        dl {}
+
+        dt {}
+
+        dd {
+            margin-left: 0;
+            font-size: 0.9em;
+            color: #787878;
+            margin-bottom: 1.5em;
+        }
+
+        // Image styles
+        img {
+            margin: 0 0 1.5em 0;
+            max-width: 100%;
+            height: auto;
+        }
+
+        p img {
+          margin: 2em 0;
+        }
+
+        video, object {
+            max-width: 100%;
+            height: auto;
+        }
+
+        pre {
+            background: #eee;
+            border: 1px solid #cecece;
+            padding: 10px;
+        }
+
+        hr {
+          border: 0;
+          background-color: #cdcdcd;
+          height: 1px;
+          margin: 15px 0 35px 0;
+        }
+
+        code {
+          padding: 2px 5px;
+          background: #eee;
+          @include border(1px, solid, #cecece, 2px);
+        }
+
+        pre {
+          @include border($radius: 2px);
+        }
+
+        pre code {
+          padding: 0;
+          border: 0;
+          background: transparent;
+        }
+
+    } /* end .entry-content */
+
+    /* Article Tags    */
+    .article-footer {
+      margin: 1.2em 0;
+      font-size: 1.5em;
+      @extend %museo;
+      text-align: center;
+
+      .tag-label:after {
+        content: ",";
+      }
+      .tag-label:last-child:after {
+        content: "";
+      }
+    }
+
+    .tags-title {
+      font-size: 1.15em;
+
+      a.tag-label:after {
+        content: ",";
+      }
+      a.tag-label:last-child:after {
+        content: "";
+      }
+    }
+
+/******************************************************************
+PAGINATION STYLES
+******************************************************************/
+
+/* The main wrapper for our pagination links */
+.pagination {
+    @extend %museo;
+    font-size: 1.5em;
+    position: relative;
+    width: 100%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.pagination a {
+    color: #9EABB3;
+}
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+    position: absolute;
+    display: inline-block;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.older-posts {
+    right: 0;
+}
+
+.page-number {
+    display: inline-block;
+}
+
+.newer-posts {
+    left: 0;
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/******** RECENT POSTS *********/
+.recent {
+    @extend %museo;
+
+    article {
+        margin-bottom: 3em;
+    }
+
+    .article-footer {
+        margin: .5em 0;
+        text-align: left;
+        font-size: 1em;
+    }
+
+    p.byline {
+      margin: 6px 0 0 0;
+    }
+
+    .tags {
+        font-size: 1.3em;
+    }
+}
+
+.footer {
+  margin: 80px 0 0 0;
+}
+
+/******** SIDEBAR *********/
+
+.sidebar {
+    padding: 1.4em 0;
+    background: #333333;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    color: #fbfbfb;
+
+    .sidebar-header {
+        display: none;
+    }
+
+    nav {
+      text-align: center;
+      li {
+        padding: 0.4em 0;
+        &:first-child {
+          padding-top: 0;
+        }
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+      a {
+        font-family: 'PT Sans';
+        font-weight: 700;
+        color: #fbfbfb;
+        @include transition(color .25s);
+        &:hover, &:focus {
+          color: #fbfbfb;
+        }
+        &:link {
+          -webkit-tap-highlight-color : #fbfbfb;
+        }
+      }
+    }
+
+    .social {
+        color: #fbfbfb;
+        text-align: center;
+
+        a.symbol {
+          color: #fbfbfb;
+          font-size: 1.8em;
+        }
+    }
+
+}
+
+.search-form {
+    input[type="text"] {
+        @extend %museo;
+        background: #fff;
+        box-shadow: inset 0px 2px 6px rgba(136, 136, 136, 0.5);
+        border: 1px solid #888;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        width: 60%;
+        margin: 15px 0;
+        padding: 8px 5px;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        cursor: pointer;
+        @extend %ptsans;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        text-shadow: 1px 1px #fff;
+        border: 1px solid #888;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-left: none;
+        box-shadow: inset 0px 1px 1px #fff;
+        width: 76px;
+        height: 33px;
+        margin: 0;
+        margin-left: -3px;
+        padding: 8px auto;
+        -o-transition: .25s;
+        -ms-transition: .25s;
+        -moz-transition: .25s;
+        -webkit-transition: .25s;
+        transition: .25s;
+    }
+}
+
+.copyright {
+    @extend %ptsans;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.3em 0;
+    font-weight: normal;
+    color: #888;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/*********************
+DISQUS STYLES
+*********************/
+
+div#layout {
+  @extend %ptsans;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en-US" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-US" class=" js flexbox webgl no-touch geolocation hashchange history websockets rgba hsla multiplebgs backgroundsize borderimage textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage applicationcache svg svgclippaths mediaqueries no-regions no-supports" style="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{{@blog.title}}</title>
+
+    <meta name="description" content="{{@blog.description}}">
+
+    <!-- mobile meta (hooray!) -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) -->
+    <link rel="apple-touch-icon" href="/images/apple-icon-touch.png">
+    <link rel="icon" href="favicon.png">
+
+    <!--[if IE]>
+    <link rel="shortcut icon" href="favicon.ico">
+    <![endif]-->
+
+    <!-- or, set /favicon.ico for IE10 win -->
+    <meta name="msapplication-TileColor" content="#f01d4f">
+    <meta name="msapplication-TileImage" content="/images/win8-tile-icon.png">
+
+    <!-- TODO: Add Pingback URL (when it exists) -->
+
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="{{@blog.url}}/rss">
+    <link rel="stylesheet" id="linen-stylesheet-css" href="/css/style.css" type="text/css" media="all">
+
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='linen-ie-only-css'  href='/css/ie.css' type='text/css' media='all' />
+    <![endif]-->
+
+    {{ghost_head}}
+</head>
+
+
+<body class="home blog {{body_class}}" style="">
+
+    <div id="container">
+
+        {{> header}}
+
+        {{{body}}}
+
+        {{> footer}}
+    </div> <!-- end #container -->
+
+    <!-- JavaScript Libraries -->
+    <script type="text/javascript" src="/js/libs/modernizr.custom.min.js"></script>
+
+    <!-- The Ghost footer helper will insert some shared javascript libraries and files required by plugins -->
+    {{ghost_foot}}
+
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="/js/scripts.js"></script>
+
+    <!-- drop Google Analytics Here -->
+
+    <!-- end analytics -->
+
+<!-- end page. what a ride! -->
+</body>
+</html>

@@ -1,0 +1,54 @@
+<article class=" wrap hentry clearfix {{post_class}}" role="article">
+
+    <header class="article-header">
+
+        <h1 class="h2">
+            <a href="/{{slug}}" rel="bookmark" title="{{title}}">{{title}}</a>
+        </h1>
+
+        <p class="byline vcard">
+            By
+            <span class="author">
+                {{author}}
+            </span>
+
+            on
+            <time class="updated"
+                  datetime="{{date published_at format='MMMM, DD YYYY'}}"
+                  pubdate="">
+                {{date published_at format='MMMM, DD YYYY'}}
+            </time>
+
+        </p>
+
+        {{#if image}}
+            <figure class="featured-image">
+                <img src="/content/images/{{image}}" class="attachment-post-thumbnail" alt="">
+            </figure>
+        {{/if}}
+    </header> <!-- end article header -->
+
+    <section class="entry-content clearfix">
+        {{content}}
+    </section> <!-- end article section -->
+
+    <footer class="article-footer">
+        {{#if tags}}
+            <section class="tags">
+                <span class="tags-title">
+                    Tags:
+                    {{#each tags}}
+                        <!-- Tag Links are not quite ready yet.
+                           <a href="/tags/{{this.name}}"
+                           class="tag-label"
+                           title="View all posts in {{this.name}}"
+                           rel="category">{{this.name}}</a>
+                           -->
+                        <span class="tag-label">{{this.name}}</span>
+                    {{/each}}
+                </span>
+            </section>
+        {{/if}}
+    </footer> <!-- end article footer -->
+
+</article>

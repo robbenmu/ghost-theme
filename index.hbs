@@ -1,0 +1,19 @@
+{{!< default}}
+
+<div id="content">
+
+    <div id="inner-content" class="clearfix">
+
+        <main id="main" class="twelvecol first clearfix" role="main">
+
+            {{#foreach posts}}
+                {{#if @first}}
+                    {{> full-post}}
+                {{/if}}
+            {{/foreach}}
+
+        </main> <!-- end #main -->
+
+    </div> <!-- end #inner-content -->
+
+</div> <!-- end #content -->
